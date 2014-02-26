@@ -511,7 +511,7 @@
                    [k r o n] 
                    (when-not (= o n) (handler n))))
       (fn [] (remove-watch this key))))
-  (notify [this v] (ref-set this v)))
+  (notify [this v] (dosync (ref-set this v))))
 
 
 ;;; Binding Continued
